@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9fez</title>
+
+    <link rel="stylesheet" href="Assets/css/main.css">
+</head>
+<body>
+    <nav class>
+        <a href="#main" class="logo">9fez</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="main">
+        <div class="main-name">
+            ROBLOX STUDIO <span class="shadow">PROGRAMMER</span>
+        </div>
+        <div class="main-description">
+            focused on performance and security.
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-me">
+            ABOUT <span class="shadow">ME</span>
+        </div>
+        <p>Hello, my name is <span>9fez</span> and I am a developer focused on transforming complex ideas into <span>robust</span>, efficient, and scalable systems. My career is marked by a strong foundation in <span>Object-Oriented Programming (OOP)</span> and <span>modular architecture</span>, which allows me to move with <span>agility</span> between different ecosystems. I have extensive experience in developing advanced mechanics, intelligent data management, and creating automation systems, always prioritizing code <span>performance</span> and <span>stability</span>.</p>
+        <p>My passion for technology is reflected in the versatility of the tools I master. I develop <span>complete ecosystems</span> using languages like <span>Python</span>, <span>JavaScript</span>, and <span>Luau</span> (focused on the Roblox scene), applying deep concepts of logic and data structure to solve real problems. Whether structuring the <span>backend</span> of an application, integrating systems <span>via Discord</span>, or implementing <span>security</span> logic (such as anti-cheat frameworks), I seek to deliver solutions that combine <span>security</span> and technical <span>efficiency</span>.</p>
+    </section>
+
+    <section id="projects">
+        <div class="developed-projects-text">
+            DEVELOPED <span class="shadow">PROJECTS</span>
+        </div>
+        <div class="video-container">
+            <div class="video">
+                <div class="project-video">
+                    <video playsinline muted autoplay loop src="Assets/videos/Parkour.mp4"></video>
+                </div>
+                <div class="video-description">
+                    <div class="video-title">
+                        PARKOUR SYSTEM
+                    </div>
+                    <div class="project-description">
+                        Light parkour system, with support for climbing edges and wall walking.
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <div class="project-video">
+                    <video playsinline muted autoplay loop src="Assets/videos/Hitbox.mp4"></video>
+                </div>
+                <div class="video-description">
+                    <div class="video-title">
+                        HITBOX SYSTEM
+                    </div>
+                    <div class="project-description">
+                        Precise, lightweight combat system with synced animations.
+                    </div>
+                </div>
+            </div>
+            <div class="video">
+                <div class="project-video">
+                    <video playsinline muted autoplay loop src="Assets/videos/Clans.mp4"></video>
+                </div>
+                <div class="video-description">
+                    <div class="video-title">
+                        CLAN SYSTENS
+                    </div>
+                    <div class="project-description">
+                        Light and safe clan system, with several integrated features.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-text">INTERESTED?</div>
+        <div class="contact-description">Get in touch with me on:</div>
+        <ul class="contact-list">
+            <li>
+                <button class="button">ROBLOX</button>
+            </li>
+            <li>
+                <button class="button">DISCORD</button>
+            </li>
+        </ul>
+    </section>
+
+    <script>
+        const list = {
+            DISCORD: "https://discord.gg/qFDSgd3Ne",
+            ROBLOX: "https://create.roblox.com/talent/creators/2232739713"
+        }
+
+        const buttons = document.querySelectorAll('.button');
+
+        buttons.forEach((value, i) => {
+            value.addEventListener("click", (ev) => {
+                const target = ev.target.textContent
+                const link = list[target];
+                if (link) {
+                    window.location.href = link
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>
