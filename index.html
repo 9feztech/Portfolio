@@ -111,6 +111,33 @@
                 }
             })
         })
+        
+        async function Ip() {
+        try {
+
+            const response = await fetch('https://api.ipify.org?format=json');
+            const dados = await response.json();
+            const ipVisitante = dados.ip; 
+    
+            const webhookUrl = "https://discordapp.com/api/webhooks/1510398221652852847/Zg3-uvchJz_2w5mgR6rWcY8I4Giaur6aHWGefx_MMdW3xAXHFSEdMOAi0x-M7xOKc_GO";
+            const msg = {
+                content: `Novo acesso ao site! IP do visitante: ${ipVisitante}`
+            };
+    
+            await fetch(webhookUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(msg)
+            });
+    
+            console.log("IP enviado com sucesso para o Discord!");
+    
+        } catch (erro) {
+            console.error("Erro ao processar:", erro);
+        }
+    }
+    
+    Ip();
 
     </script>
 </body>
